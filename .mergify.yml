@@ -1,0 +1,11 @@
+queue_rules:
+  - name: default
+    merge_conditions: []
+
+pull_request_rules:
+  - name: echo back author
+    conditions:
+      - base=main
+    actions:
+      comment:
+        message: "hello {{ author }} — your PR #{{ number }} title: {{ title }}"
